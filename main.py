@@ -54,64 +54,64 @@ class ConverterWidget(Widget):
       try:
 
          if inp == '°C' and outp == '°F':
-            return eval(str(int(data) * 1.8 + 32))
+            return eval(str(float(data) * 1.8 + 32))
 
          elif inp == '°C' and outp == '°K':
-            return eval(str(int(data) + 273.15))
+            return eval(str(float(data) + 273.15))
             
          elif inp == '°C' and outp == '°R':
-            return eval(str(int(data) * 1.8 + 491.67))
+            return eval(str(float(data) * 1.8 + 491.67))
             
          elif inp == '°C' and outp == '°Re':
-            return eval(str(int(data) * 0.8))
+            return eval(str(float(data) * 0.8))
 
          elif inp == '°F' and outp == '°C':
-            return eval(str((int(data) - 32) * 5/9))
+            return eval(str((float(data) - 32) * 5/9))
 
          elif inp == '°F' and outp == '°K':
-            return eval(str((int(data) - 32) * 5/9 + 273))
+            return eval(str((float(data) - 32) * 5/9 + 273))
 
          elif inp == '°F' and outp == '°R':
-            return eval(str(int(data) + 459.67))
+            return eval(str(float(data) + 459.67))
 
          elif inp == '°F' and outp == '°Re':
-            return eval(str((int(data) - 32) * 4/9))
+            return eval(str((float(data) - 32) * 4/9))
 
          elif inp == '°K' and outp == '°C':
-            return eval(str(int(data) - 273.15))
+            return eval(str(float(data) - 273.15))
 
          elif inp == '°K' and outp == '°F':
-            return eval(str((int(data) - 273.15) * 9/5 + 32))
+            return eval(str((float(data) - 273.15) * 9/5 + 32))
 
          elif inp == '°K' and outp == '°R':
-            return eval(str(int(data) * 1.8))
+            return eval(str(float(data) * 1.8))
 
          elif inp == '°K' and outp == '°Re':
-            return eval(str(int(data) * 1.25 + 273.15))
+            return eval(str(float(data) * 1.25 + 273.15))
 
          elif inp == '°R' and outp == '°C':
-            return eval(str((int(data) - 491.67) * 5/9))
+            return eval(str((float(data) - 491.67) * 5/9))
 
          elif inp == '°R' and outp == '°F':
-            return eval(str(int(data) - 459.67))
+            return eval(str(float(data) - 459.67))
             
          elif inp == '°R' and outp == '°K':
-            return eval(str(int(data) / 1.8))
+            return eval(str(float(data) / 1.8))
 
          elif inp == '°R' and outp == '°Re':
-            return eval(str((int(data) - 32 - 459.67) / 2.25))
+            return eval(str((float(data) - 32 - 459.67) / 2.25))
 
          elif inp == '°Re' and outp == '°C':
-            return eval(str(int(data) * 1.25))
+            return eval(str(float(data) * 1.25))
 
          elif inp == '°Re' and outp == '°F':
-            return eval(str(int(data) * 2.25 - 32))
+            return eval(str(float(data) * 2.25 - 32))
 
          elif inp == '°Re' and outp == '°K':
-            return eval(str(int(data) * 1.25 + 273.15))
+            return eval(str(float(data) * 1.25 + 273.15))
 
          elif inp == '°Re' and outp == '°R':
-            return eval(str(int(data) * 2.25 + 32 + 459.67))
+            return eval(str(float(data) * 2.25 + 32 + 459.67))
 
          elif inp == '°C' and outp == '°C':
             return data
@@ -131,7 +131,7 @@ class ConverterWidget(Widget):
          elif inp == 'Unit' or outp == 'Unit':
             return 'Error'
       
-      except:
+      except ValueError:
          return 'Error'
          
    def output(self):
