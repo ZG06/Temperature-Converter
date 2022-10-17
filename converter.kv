@@ -1,0 +1,132 @@
+#:kivy 2.1
+
+<Button>:
+   background_normal: ''
+   background_color: 2/255, 10/255, 20/255
+   font_name: 'fonts/Montserrat-Medium.ttf'
+   font_size: 20
+
+<ConverterWidget>:
+   orientation: 'vertical'
+
+   GridLayout:
+      size: root.width, root.height-dp(30)
+      cols: 1
+      rows: 3
+
+      GridLayout:
+         cols: 2
+         rows: 2
+         spacing: 0, 10
+
+         #### DATA, WHICH IS GOING TO BE CONVERTED
+         Spinner:
+            id: input_unit
+            text: 'Unit'
+            size_hint: None, None
+            size: 60, 37
+            values: '°C', '°F', '°K', '°R', '°Re'
+
+         TextInput:
+            id: input_data
+            text: '0'
+            halign: 'right'
+            multiline: False
+            size_hint: None, None
+            width: root.width - dp(80)
+            height: 37
+            font_size: 25
+            background_color: 193/255, 209/255, 210/255
+            font_name: 'fonts/Montserrat-Medium.ttf'
+
+         #### CONVERTED DATA
+         Spinner:
+            id: output_unit
+            text: 'Unit'
+            size_hint: None, None
+            size: 60, 37
+            values: '°C', '°F', '°K', '°R', '°Re'
+
+         TextInput:
+            id: output_data
+            text: '0'
+            halign: 'right'
+            multiline: False
+            size_hint: None, None
+            width: root.width - dp(80)
+            height: 37
+            font_size: 25
+            background_color: 193/255, 209/255, 210/255
+            font_name: 'fonts/Montserrat-Medium.ttf'
+
+      #### BUTTONS #####
+      GridLayout:
+         size_hint: 1, None
+         height: root.height - dp(200)
+         cols: 4
+         rows: 4
+
+         #### ROW 1 ####
+         Button:
+            text: '7'
+            on_press: root.number_input('7')
+         Button:
+            text: '8'
+            on_press: root.number_input('8')
+         Button:
+            text: '9'
+            on_press: root.number_input('9')
+         Button:
+            text: 'AC'
+            background_color: 23/255, 54/255, 156/255
+            on_press: root.clear()
+
+         #### ROW 2 ####
+         Button:
+            text: '4'
+            on_press: root.number_input('4')
+         Button:
+            text: '5'
+            on_press: root.number_input('5')
+         Button:
+            text: '6'
+            on_press: root.number_input('6')
+         Button:
+            text: '«'
+            background_color: 23/255, 54/255, 156/255
+            on_press: root.remove_last()
+
+         #### ROW 3 ####
+         Button:
+            text: '1'
+            on_press: root.number_input('1')
+         Button:
+            text: '2'
+            on_press: root.number_input('2')
+         Button:
+            text: '3'
+            on_press: root.number_input('3')
+         Button:
+            text: '+/-'
+            background_color: 23/255, 54/255, 156/255
+            on_press: root.swap_signs()
+
+         #### ROW 4 ####
+         BoxLayout:
+            Button:
+               text: '0'
+               size_hint: None, 1
+               width: root.width*0.3
+               on_press: root.number_input('0')
+            Button:
+               text: '.'
+               size_hint: None, 1
+               width: root.width*0.3
+               on_press: root.dot()
+
+            Button:
+               text: 'Calculate'
+               size_hint: None, 1
+               width: root.width*0.4
+               on_press: root.output()
+               
