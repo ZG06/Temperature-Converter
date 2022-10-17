@@ -131,7 +131,7 @@ class ConverterWidget(Widget):
          elif inp == 'Unit' or outp == 'Unit':
             return 'Error'
       
-      except ValueError:
+      except:
          return 'Error'
          
    def output(self):
