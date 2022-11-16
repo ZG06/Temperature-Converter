@@ -9,7 +9,7 @@ All you need to do is to:
 
 ![Screenshot_2022-10-17_08_48_43](https://user-images.githubusercontent.com/92268833/196181526-a6506ad3-362e-4cb7-97a1-c8c09d75086c.png)
 
-## To use the app:
+## Installation Instruction:
     $ git clone https://github.com/ZG06/kivy-temp-converter.git
     $ cd kivy-temp-converter
     $ chmod +x main.py
