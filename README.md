@@ -1,4 +1,4 @@
-# kivy-temp-converter
+# Temperature-Converter
 
 The application helps to convert temperatures from 5 different scales.
 
